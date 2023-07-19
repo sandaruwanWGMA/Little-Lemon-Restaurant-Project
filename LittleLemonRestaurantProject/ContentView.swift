@@ -7,19 +7,31 @@
 
 import SwiftUI
 
+var cities = Cities()
+
 struct ContentView: View {
+    @StateObject var resevedRestaurants = ReservationsList()
+    @StateObject var reservationNumber = ReservationNumber()
+
     var body: some View {
-        TabView {
-            Locations()
-                .tabItem{
-                    Image(systemName: "fork.knife")
-                    Text("Locations")
-                }
-            Reservations()
-                .tabItem{
-                    Image(systemName: "square.and.pencil")
-                    Text("Reservations")
-                }
+        VStack{
+            TabView {
+                Locations()
+                    .tabItem{
+                        Image(systemName: "fork.knife")
+                        Text("Locations")
+                    }
+                Reservations()
+                    .tabItem{
+                        Image(systemName: "square.and.pencil")
+                        Text("Reservations")
+                    }
+            }
+            .environmentObject(resevedRestaurants)
+            .environmentObject(reservationNumber)
+            .environmentObject(cities)
+
+
         }
     }
 }

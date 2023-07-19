@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D4046622A6780F100FDA754 /* ReservationsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4046612A6780F100FDA754 /* ReservationsList.swift */; };
+		4D40467E2A67B5E900FDA754 /* ReservationNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D40467D2A67B5E900FDA754 /* ReservationNumber.swift */; };
 		4DAC617A2A6613DD00C165B4 /* LittleLemonRestaurantProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAC61792A6613DD00C165B4 /* LittleLemonRestaurantProjectApp.swift */; };
 		4DAC617C2A6613DD00C165B4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAC617B2A6613DD00C165B4 /* ContentView.swift */; };
 		4DAC617E2A6613DE00C165B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DAC617D2A6613DE00C165B4 /* Assets.xcassets */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D4046612A6780F100FDA754 /* ReservationsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationsList.swift; sourceTree = "<group>"; };
+		4D40467D2A67B5E900FDA754 /* ReservationNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationNumber.swift; sourceTree = "<group>"; };
 		4DAC61762A6613DD00C165B4 /* LittleLemonRestaurantProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LittleLemonRestaurantProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DAC61792A6613DD00C165B4 /* LittleLemonRestaurantProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleLemonRestaurantProjectApp.swift; sourceTree = "<group>"; };
 		4DAC617B2A6613DD00C165B4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				4DAC61872A6622DF00C165B4 /* Reservations.swift */,
+				4D4046612A6780F100FDA754 /* ReservationsList.swift */,
 				4DAC61912A66548300C165B4 /* ReservationDetails.swift */,
 				4DAC618F2A664ACA00C165B4 /* Restaurant.swift */,
 				4DAC61892A66230B00C165B4 /* Locations.swift */,
@@ -70,6 +75,7 @@
 				4DAC617B2A6613DD00C165B4 /* ContentView.swift */,
 				4DAC617D2A6613DE00C165B4 /* Assets.xcassets */,
 				4DAC617F2A6613DE00C165B4 /* Preview Content */,
+				4D40467D2A67B5E900FDA754 /* ReservationNumber.swift */,
 			);
 			path = LittleLemonRestaurantProject;
 			sourceTree = "<group>";
@@ -154,6 +160,8 @@
 			files = (
 				4DAC618E2A6647BD00C165B4 /* Cities.swift in Sources */,
 				4DAC617C2A6613DD00C165B4 /* ContentView.swift in Sources */,
+				4D4046622A6780F100FDA754 /* ReservationsList.swift in Sources */,
+				4D40467E2A67B5E900FDA754 /* ReservationNumber.swift in Sources */,
 				4DAC61882A6622DF00C165B4 /* Reservations.swift in Sources */,
 				4DAC61922A66548300C165B4 /* ReservationDetails.swift in Sources */,
 				4DAC61902A664ACA00C165B4 /* Restaurant.swift in Sources */,
@@ -295,6 +303,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -324,6 +333,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

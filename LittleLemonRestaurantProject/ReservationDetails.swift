@@ -7,7 +7,10 @@ struct ReservationDetails: View {
     @State private var messege = ""
     @State private var errorMessage: ErrorModel? = nil
     @ObservedObject var restaurant: Restaurant
-    @State var reservationNumber = 1
+    @EnvironmentObject var reservationNumber: ReservationNumber
+    @EnvironmentObject var sharedObj: ReservationsList
+    @Environment(\.presentationMode) var presentationMode
+
     
     let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -33,7 +36,7 @@ struct ReservationDetails: View {
             HStack(spacing: 80){
                 VStack(alignment: .leading){
                     Text("PARTY")
-                    Text(String(reservationNumber))
+                    Text(String(restaurant.number))
                 }
                 HStack{
                     Text(dateFormatter.string(from: currentDate))
@@ -69,9 +72,19 @@ struct ReservationDetails: View {
                     RoundedRectangle(cornerRadius: 20)
                         .stroke(Color(UIColor(red: 0.83, green: 0.83, blue: 0.83, alpha: 1)), lineWidth: 1)
                 )
-            
             Button("Confirm Reservation"){
-                validateInput()
+                print("Tapped")
+                print(reservationNumber)
+                if validateInput() != false{
+                    reservationNumber.number += 1
+                    restaurant.number += 1
+                    
+                    sharedObj.reservationsList.append(restaurant)
+                    Reservations()
+                        .environmentObject(sharedObj)
+                    presentationMode.wrappedValue.dismiss()
+
+                }
             }
                 .textCase(.uppercase)
                 .padding()
@@ -82,10 +95,11 @@ struct ReservationDetails: View {
                                     Alert(title: Text("Error"), message: Text(error.message), dismissButton: .default(Text("OK")))
                                 }
 
+
         }
     }
     
-    func validateInput() {
+    func validateInput() -> Bool {
         if name.isEmpty || phoneNumber.isEmpty || email.isEmpty || name.count < 3 {
             errorMessage = ErrorModel(message: """
             Found these errors in the form
@@ -98,15 +112,17 @@ struct ReservationDetails: View {
             The e-mail is invalid and
             can not be blank
             """)
+            return false
         } else {
             errorMessage = nil
+            return true
         }
     }
 }
 
 struct ReservationDetails_Previews: PreviewProvider {
     static var previews: some View {
-        ReservationDetails(restaurant: Restaurant(city: "", contact: ""))
+        ReservationDetails(restaurant: Restaurant(city: "", contact:"")).environmentObject(ReservationsList())
     }
 }
 

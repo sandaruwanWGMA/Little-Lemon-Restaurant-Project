@@ -8,13 +8,28 @@
 import SwiftUI
 
 struct Reservations: View {
+    @EnvironmentObject var resevedRestaurants: ReservationsList
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List{
+            Section(header: Text("Reserved Restaurants").font(.largeTitle))
+            {
+                ForEach(resevedRestaurants.reservationsList, id: \.id){ reservation in
+                    VStack(alignment: .leading){
+                        Text(reservation.city)
+                            .font(.title)
+                        Text(reservation.contact)
+                            .foregroundColor(Color.gray)
+                    }
+            }
+                
+            }
+        }
     }
 }
 
+
 struct Reservations_Previews: PreviewProvider {
     static var previews: some View {
-        Reservations()
+        Reservations().environmentObject(ReservationsList())
     }
 }

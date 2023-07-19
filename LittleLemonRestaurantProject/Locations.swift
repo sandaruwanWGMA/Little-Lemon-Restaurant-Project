@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct Locations: View {
-    @ObservedObject var citiesList = Cities()
-    @State private var selectedRestaurant: Restaurant? = nil
-    
+    @EnvironmentObject var citiesList: Cities
+//    @State private var selectedRestaurant: Restaurant? = nil
+
     var body: some View {
         NavigationView{
             VStack{
